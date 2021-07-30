@@ -1,8 +1,18 @@
-import { getTypes } from "./database.js"
+import { getTypes, setType } from "./database.js"
+
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "type") {
+            setType(parseInt(event.target.value))
+        }
+    }
+)
+
+
 const types = getTypes()
 export const JewelryTypes = () => {
     let html = "<ul>"
-
     // Use .map() for converting objects to <li> elements
     const listItemsArray = types.map(
         (type) => {

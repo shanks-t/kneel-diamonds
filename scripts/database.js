@@ -27,9 +27,9 @@ const database = {
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
     types: [
-        {id:1, type: "Ring"},
-        {id:2, type: "Earring"},
-        {id:3, type: "Necklace"}
+        {id:1, type: "Ring", priceMult: 1},
+        {id:2, type: "Earring", priceMult: 2},
+        {id:3, type: "Necklace", priceMult: 4}
     ],
     customOrders: [
         {
@@ -37,6 +37,7 @@ const database = {
             metalId: 3,
             sizeId: 2,
             styleId: 3,
+            typeId: 2,
             timestamp: 1614659931693
         }
     ]
@@ -45,7 +46,7 @@ const database = {
 export const addCustomOrder = () => {
     // Copy the current state of user choices
     const newOrder = {...database.orderBuilder}
-
+    debugger
     // Add a new primary key to the object
     const lastIndex = database.customOrders.length - 1
     newOrder.id = database.customOrders[lastIndex].id + 1
@@ -90,4 +91,8 @@ export const setSize = (id) => {
 
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+
+export const setType = (id) => {
+    database.orderBuilder.typeId = id
 }
