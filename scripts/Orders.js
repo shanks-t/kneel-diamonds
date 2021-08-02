@@ -1,5 +1,5 @@
-import { getOrders, addCustomOrder } from "./database.js"
-import { getMetals, getTypes } from "./database.js"
+import { getOrders, addCustomOrder } from "./dataAccess.js"
+import { getMetals, getTypes } from "./dataAccess.js"
 
 
 document.addEventListener(

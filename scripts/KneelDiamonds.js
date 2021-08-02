@@ -3,17 +3,17 @@ import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
 import { JewelryTypes } from "./JewelryTypes.js"
-import { addCustomOrder } from "./database.js"
-
+import { addCustomOrder } from "./dataAccess.js"
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "orderButton") {
             addCustomOrder()
         }
     }
 )
+
 
 export const KneelDiamonds = () => {
     return `
